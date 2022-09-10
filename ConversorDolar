@@ -1,0 +1,41 @@
+
+const express = require('express');
+const api = express();
+
+fCalcularConversao = (contador, valorEmReais, valorEmDolares) => {
+    const contador = 0
+    const valorEmReais = 0
+    const valorEmDolares = 0
+}
+
+api.get('/ConverterDolar', (req, res) => {
+    let contador = Number(req.query.contador);
+    let valorEmReais = Number(req.query.valorEmReais);
+    let valorEmDolares = Number(req.query.valorEmDolares);
+    let quantidadeConversões = Number(input.question('Quantas vezes você quer converter?'));
+
+    if (isNaN(contador) || isNaN(valorEmReais) || isNaN(valorEmDolares)) {
+        return context.res.status(400).send('Formato de dados incorreto, os campos aceitam somente numeros.');
+    }
+
+while (contador < quantidadeConversões) {
+        valorEmReais = Number(input.question('Qual o valor em R$'));
+        valorEmDolares = valorEmReais / 5.15
+        console.log(`O valor convertido em US$ ${valorEmDolares.toFixed(2)}`);
+        contador += 1
+    }
+});
+
+let resultadoConversao = fCalcularConversao(contador, valorEmReais, valorEmDolares);
+
+context.res.json({
+
+    contador: contador,
+    valorEmReais: valorEmReais,
+    valorEmDolares: valorEmDolares,
+    resultadoConversao: resultadoConversao
+});
+
+api.listen(5000, () => {
+    console.log('Conversão Finalizada!')
+});
